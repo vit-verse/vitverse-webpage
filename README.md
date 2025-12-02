@@ -75,7 +75,6 @@ The website uses CSS custom properties for theming:
 - Manual toggle via header button
 - Theme preference saved in localStorage
 
-## License
 
-Built for VIT Chennai students by a VIT Chennai student.
-# vitverse-website2
+
+vitverse.web.app
