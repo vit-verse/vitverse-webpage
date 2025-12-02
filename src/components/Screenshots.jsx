@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Screenshots.css'
 
 const Screenshots = () => {
@@ -39,9 +39,62 @@ const Screenshots = () => {
     alt: `VITVerse ${file.replace('.jpg', '').replace(/([A-Z])/g, ' $1').trim()}`
   }));
 
+  const containerRef = useRef(null);
+  const animationRef = useRef(null);
+
+  // Continuous smooth scrolling animation
+  useEffect(() => {
+    const scrollContainer = containerRef.current;
+    if (!scrollContainer) return;
+
+    let scrollAmount = 0;
+    const scrollSpeed = 1; // Pixels per frame
+    
+    // Start continuous animation
+    const animate = () => {
+      scrollAmount += scrollSpeed;
+      scrollContainer.scrollLeft = scrollAmount;
+      
+      // Reset scroll position when it reaches the end to create infinite loop
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+        scrollAmount = 0;
+        scrollContainer.scrollLeft = 0;
+      }
+      
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    // Start animation after a brief delay
+    const initTimer = setTimeout(() => {
+      // Duplicate the screenshots for seamless looping
+      const scrollTrack = scrollContainer.querySelector('.screenshots-scroll');
+      if (scrollTrack) {
+        // Clone all children and append them
+        const children = Array.from(scrollTrack.children);
+        children.forEach(child => {
+          const clone = child.cloneNode(true);
+          clone.setAttribute('data-cloned', 'true');
+          scrollTrack.appendChild(clone);
+        });
+      }
+      
+      animationRef.current = requestAnimationFrame(animate);
+    }, 1000);
+
+    return () => {
+      clearTimeout(initTimer);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="screenshots section">
-      <div className="screenshots-container">
+      <div 
+        className="screenshots-container" 
+        ref={containerRef}
+      >
         <div className="screenshots-scroll">
           {screenshots.map((screenshot) => (
             <div key={screenshot.id} className="screenshot-item">

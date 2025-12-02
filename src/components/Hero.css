@@ -58,6 +58,15 @@
   margin-bottom: 16px;
 }
 
+.app-developer a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.app-developer a:hover {
+  text-decoration: underline;
+}
+
 .app-meta {
   display: flex;
   gap: 16px;
@@ -120,20 +129,24 @@
   box-shadow: 0 2px 6px rgba(66, 133, 244, 0.4);
 }
 
-.btn-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.btn-share {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
   transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
 }
 
-.btn-icon:hover {
-  background: rgba(255,255,255,0.3);
+.btn-share:hover {
+  background: var(--bg-tertiary);
 }
 
 .hero-description {
