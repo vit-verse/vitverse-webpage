@@ -5,12 +5,15 @@
 }
 
 .screenshots-container {
-  overflow-x: auto;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .screenshots-scroll {
   display: flex;
   gap: 16px;
+  width: fit-content;
 }
 
 .screenshot-item {
@@ -26,4 +29,8 @@
   border: 1px solid var(--border-color);
   box-shadow: 0 1px 3px var(--card-shadow);
   transition: transform 0.2s;
+}
+
+.screenshot-image:hover {
+  transform: scale(1.02);
 }
