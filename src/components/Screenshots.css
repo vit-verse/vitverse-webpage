@@ -1,36 +1,4 @@
-.screenshots {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 30px;
-}
-
-.screenshot-item {
-  flex-shrink: 0;
-  width: 220px;
-}
-
-.screenshot-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 1px 3px var(--card-shadow);
-  transition: transform 0.2s;
-}
-
-.screenshots-scroll {
-  overflow-x: auto;
-  display: flex;
-  gap: 20px;
-  scroll-behavior: smooth;
-}
-
-.screenshots-container {
-  position: relative;
-  overflow: visible;
-}
-
+/* Fade edges */
 .screenshots-container::before,
 .screenshots-container::after {
   content: "";
@@ -44,10 +12,78 @@
 
 .screenshots-container::before {
   left: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0.1) 90%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.95), transparent);
 }
 
 .screenshots-container::after {
   right: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0.1) 90%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.95), transparent);
+}
+
+
+/* Screenshots wrapper */
+.screenshots {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  position: relative; /* Add this for fade positioning */
+}
+
+/* Fade edges - moved to .screenshots */
+.screenshots::before,
+.screenshots::after {
+  content: "";
+  position: absolute;
+  top: 30px; /* Match padding-top */
+  width: 100px;
+  height: calc(100% - 30px);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.screenshots::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.95), transparent);
+}
+
+.screenshots::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.95), transparent);
+}
+
+/* MAKE THIS THE ONLY SCROLLABLE ELEMENT */
+.screenshots-container {
+  position: relative;
+  overflow-x: scroll;  /* <-- IMPORTANT */
+  overflow-y: hidden;
+  white-space: nowrap; /* <-- helps prevent wrapping */
+  scrollbar-width: none;      /* Hide scrollbar Firefox */
+}
+
+.screenshots-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome */
+}
+
+
+/* Track must NOT scroll itself */
+.screenshots-scroll {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap; /* Important */
+  width: max-content; /* Ensures long row */
+  overflow: visible;   /* <-- IMPORTANT */
+}
+
+.screenshot-item {
+  flex: 0 0 auto;
+  width: 220px;
+}
+
+.screenshot-image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px var(--card-shadow);
+  transition: transform 0.2s;
 }

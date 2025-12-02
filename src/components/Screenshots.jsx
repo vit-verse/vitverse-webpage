@@ -36,7 +36,10 @@ const Screenshots = () => {
   const screenshots = screenshotFiles.map((file, index) => ({
     id: index + 1,
     src: `/features/${file}`,
-    alt: `VITVerse ${file.replace('.jpg', '').replace(/([A-Z])/g, ' $1').trim()}`
+    alt: `VITVerse ${file
+      .replace('.jpg', '')
+      .replace(/([A-Z])/g, ' $1')
+      .trim()}`
   }));
 
   const containerRef = useRef(null);
@@ -49,27 +52,22 @@ const Screenshots = () => {
 
     let scrollAmount = 0;
     const scrollSpeed = 1; // Pixels per frame
-    
-    // Start continuous animation
+
     const animate = () => {
       scrollAmount += scrollSpeed;
       scrollContainer.scrollLeft = scrollAmount;
-      
-      // Reset scroll position when it reaches the end to create infinite loop
+
       if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
         scrollAmount = 0;
         scrollContainer.scrollLeft = 0;
       }
-      
+
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    // Start animation after a brief delay
     const initTimer = setTimeout(() => {
-      // Duplicate the screenshots for seamless looping
       const scrollTrack = scrollContainer.querySelector('.screenshots-scroll');
       if (scrollTrack) {
-        // Clone all children and append them
         const children = Array.from(scrollTrack.children);
         children.forEach(child => {
           const clone = child.cloneNode(true);
@@ -77,29 +75,24 @@ const Screenshots = () => {
           scrollTrack.appendChild(clone);
         });
       }
-      
+
       animationRef.current = requestAnimationFrame(animate);
     }, 1000);
 
     return () => {
       clearTimeout(initTimer);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
   }, []);
 
   return (
     <section className="screenshots section">
-      <div 
-        className="screenshots-container" 
-        ref={containerRef}
-      >
+      <div className="screenshots-container" ref={containerRef}>
         <div className="screenshots-scroll">
           {screenshots.map((screenshot) => (
             <div key={screenshot.id} className="screenshot-item">
-              <img 
-                src={screenshot.src} 
+              <img
+                src={screenshot.src}
                 alt={screenshot.alt}
                 className="screenshot-image"
                 loading="lazy"
@@ -109,7 +102,7 @@ const Screenshots = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Screenshots
+export default Screenshots;
