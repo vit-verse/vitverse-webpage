@@ -6,10 +6,10 @@ const Header = () => {
     <header className="header">
       <div className="header-content">
         <a href="#">
-        <div className="logo-section">
-          <img src="/logo.jpg" alt="VITVerse Logo" className="app-logo" />
-          <span className="logo-text lora">VIT Verse</span>
-        </div>
+          <div className="logo-section">
+            <img src="/logo.jpg" alt="VITVerse Logo" className="app-logo" />
+            <span className="logo-text lora">VIT Verse</span>
+          </div>
         </a>
         <nav className="nav">
           <a href="#features">Features</a>
