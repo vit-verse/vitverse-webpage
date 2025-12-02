@@ -6,8 +6,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-disclaimer">
-          <p>Built with ❤️ just for entertainment purposes... no deep VIT missions here</p>
-          <p>Not affiliated with VIT Chennai. Developed independently by a VIT Chennai student.</p>
+          {/* <p>Built with ❤️ just for entertainment purposes... no deep VIT missions here</p> */}
+          <p>Not affiliated with VIT Chennai. Developed independently.</p>
         </div>
         <div className="footer-links">
           <a href="https://github.com/divyanshupatel17/vit-connect/blob/main/docs/PRIVACY_POLICY.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a>

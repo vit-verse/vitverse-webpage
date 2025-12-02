@@ -11,7 +11,9 @@ const Hero = () => {
           </div>
           <div className="app-info">
             <h1 className="app-title lora">VIT Verse</h1>
-            <p className="app-developer">Independent Developer</p>
+            <a href="https://divyanshupatel.com/" target="_blank" rel="noopener noreferrer">
+              <p className="app-developer outfit">Divyanshu Patel</p>
+            </a>
             <div className="app-meta">
               <div className="meta-item">
                 <span className="meta-value">4.8★</span>
