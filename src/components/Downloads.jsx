@@ -72,7 +72,21 @@ const Downloads = () => {
                             <p className="download-size">{dl.size}</p>
                             <p className="download-desc">{dl.desc}</p>
                           </div>
-                          <a href={dl.link} className="btn-download">Download</a>
+                          <a 
+                            href={dl.link} 
+                            className="btn-download"
+                            onClick={() => {
+                              if (window.vitverseLogEvent && window.vitverseAnalytics) {
+                                window.vitverseLogEvent(window.vitverseAnalytics, 'apk_download', {
+                                  site: window.location.hostname,
+                                  version: version.version,
+                                  architecture: dl.arch
+                                });
+                              }
+                            }}
+                          >
+                            Download
+                          </a>
                         </div>
                       ))}
                     </div>
@@ -119,7 +133,21 @@ const Downloads = () => {
                               <p className="download-size">{dl.size}</p>
                               <p className="download-desc">{dl.desc}</p>
                             </div>
-                            <a href={dl.link} className="btn-download">Download</a>
+                            <a 
+                              href={dl.link} 
+                              className="btn-download"
+                              onClick={() => {
+                                if (window.vitverseLogEvent && window.vitverseAnalytics) {
+                                  window.vitverseLogEvent(window.vitverseAnalytics, 'apk_download', {
+                                    site: window.location.hostname,
+                                    version: version.version,
+                                    architecture: dl.arch
+                                  });
+                                }
+                              }}
+                            >
+                              Download
+                            </a>
                           </div>
                         ))}
                       </div>
