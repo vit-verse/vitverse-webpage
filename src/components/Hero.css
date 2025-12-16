@@ -111,6 +111,7 @@
 }
 
 .btn-install {
+  text-align: center;
   background: var(--accent-primary);
   color: white;
   padding: 10px 24px;
