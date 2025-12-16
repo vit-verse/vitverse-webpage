@@ -35,7 +35,6 @@ jobs:
         run: cp CNAME dist/CNAME
 
       - name: Upload artifact
-        id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
