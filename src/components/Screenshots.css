@@ -87,3 +87,73 @@
   box-shadow: 0 1px 3px var(--card-shadow);
   transition: transform 0.2s;
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .screenshots {
+    padding-top: 24px;
+  }
+  
+  .screenshots::before,
+  .screenshots::after {
+    width: 80px;
+  }
+  
+  .screenshots-scroll {
+    gap: 16px;
+  }
+  
+  .screenshot-item {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .screenshots {
+    padding-top: 20px;
+  }
+  
+  .screenshots::before,
+  .screenshots::after {
+    width: 60px;
+    top: 20px;
+    height: calc(100% - 20px);
+  }
+  
+  .screenshots-scroll {
+    gap: 12px;
+  }
+  
+  .screenshot-item {
+    width: 180px;
+  }
+  
+  .screenshot-image {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .screenshots {
+    padding-top: 16px;
+  }
+  
+  .screenshots::before,
+  .screenshots::after {
+    width: 40px;
+    top: 16px;
+    height: calc(100% - 16px);
+  }
+  
+  .screenshots-scroll {
+    gap: 10px;
+  }
+  
+  .screenshot-item {
+    width: 160px;
+  }
+  
+  .screenshot-image {
+    border-radius: 8px;
+  }
+}

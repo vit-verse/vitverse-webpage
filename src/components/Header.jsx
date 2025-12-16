@@ -7,7 +7,7 @@ const Header = () => {
       <div className="header-content">
         <a href="#">
           <div className="logo-section">
-            <img src="/logo.jpg" alt="VITVerse Logo" className="app-logo" />
+            <img src="/logo.png" alt="VITVerse Logo" className="app-logo" />
             <span className="logo-text lora">VIT Verse</span>
           </div>
         </a>

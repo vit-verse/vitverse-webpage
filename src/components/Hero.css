@@ -159,24 +159,165 @@
   margin-top: 16px;
 }
 
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 1px solid var(--border-color);
+}
+
+.github-link:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--accent-primary);
+}
+
+.github-text {
+  white-space: nowrap;
+}
+
+/* Tablet and Mobile Responsive */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 20px;
+    margin-top: 12px;
+  }
+  
+  .hero-content {
+    gap: 20px;
+  }
+  
+  .app-title {
+    font-size: 24px;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 768px) {
+  .hero {
+    padding: 16px;
+  }
+  
   .hero-content {
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
   }
   
   .hero-left {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
+  }
+  
+  .app-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .app-info {
+    width: 100%;
+  }
+  
+  .app-title {
+    font-size: 22px;
   }
   
   .app-meta {
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 12px;
+  }
+  
+  .meta-divider {
+    display: none;
+  }
+  
+  .meta-item {
+    min-width: 100px;
   }
   
   .hero-actions {
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn-install,
+  .btn-share {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+  }
+  
+  .hero-description {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 12px;
+  }
+  
+  .app-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+  }
+  
+  .app-title {
+    font-size: 20px;
+  }
+  
+  .app-meta {
+    gap: 8px;
+  }
+  
+  .meta-item {
+    min-width: 80px;
+  }
+  
+  .meta-value {
+    font-size: 13px;
+  }
+  
+  .meta-label {
+    font-size: 11px;
+  }
+  
+  .github-link {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  .github-link svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-install,
+  .btn-share {
+    width: 100%;
+  }
+  
+  .hero-description {
+    font-size: 14px;
   }
 }

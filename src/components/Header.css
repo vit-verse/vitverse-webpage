@@ -57,9 +57,66 @@
   text-decoration: underline;
 }
 
-
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header-content {
+    padding: 8px 20px;
+  }
+  
+  .nav {
+    gap: 20px;
+  }
+  
+  .nav a {
+    font-size: 14px;
+  }
+}
 
 @media (max-width: 768px) {
+  .header-content {
+    padding: 8px 16px;
+  }
+  
+  .logo-section {
+    gap: 12px;
+  }
+  
+  .app-logo {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .logo-text {
+    font-size: 18px;
+  }
+  
+  .nav {
+    gap: 16px;
+  }
+  
+  .nav a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 6px 12px;
+  }
+  
+  .logo-section {
+    gap: 10px;
+  }
+  
+  .app-logo {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .logo-text {
+    font-size: 16px;
+  }
+  
   .nav a {
     display: none;
   }

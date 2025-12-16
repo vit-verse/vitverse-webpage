@@ -131,8 +131,152 @@
   color: #fff;
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact {
+    padding: 24px 16px;
+  }
+  
+  .contact-container {
+    padding: 20px;
+  }
+  
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .contact {
+    padding: 20px 12px;
+  }
+  
+  .contact-container {
+    padding: 16px;
+  }
+  
+  .contact-container h2 {
+    font-size: 18px;
+  }
+  
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .contact-card {
+    padding: 14px;
+  }
+  
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .contact-title {
+    font-size: 13px;
+  }
+  
+  .collaboration {
+    padding: 14px;
+  }
+  
+  .collaboration h3 {
+    font-size: 15px;
+  }
+  
+  .collaboration p {
+    font-size: 12px;
+  }
+  
+  .collaboration-links a {
+    font-size: 12px;
+  }
+  
+  .developer-note {
+    padding: 14px;
+  }
+  
+  .developer-note p {
+    font-size: 12px;
+  }
+  
+  .dev-link {
+    padding: 5px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 16px 8px;
+  }
+  
+  .contact-container {
+    padding: 12px;
+  }
+  
+  .contact-container h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .contact-card {
+    padding: 12px;
+  }
+  
+  .contact-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .contact-title {
+    font-size: 12px;
+  }
+  
+  .collaboration {
+    padding: 12px;
+  }
+  
+  .collaboration h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .collaboration p {
+    font-size: 11px;
+  }
+  
+  .collaboration-links {
+    gap: 10px;
+  }
+  
+  .collaboration-links a {
+    font-size: 11px;
+  }
+  
+  .developer-note {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .developer-note p {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  
+  .developer-links {
+    gap: 6px;
+  }
+  
+  .dev-link {
+    padding: 4px 12px;
+    font-size: 11px;
   }
 }

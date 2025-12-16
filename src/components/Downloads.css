@@ -231,7 +231,34 @@
   margin: 0;
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .downloads {
+    padding: 24px 16px;
+  }
+  
+  .downloads-container {
+    padding: 20px;
+  }
+  
+  .download-options {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
+  .downloads {
+    padding: 20px 12px;
+  }
+  
+  .downloads-container {
+    padding: 16px;
+  }
+  
+  .downloads-container h2 {
+    font-size: 20px;
+  }
+  
   .download-options {
     grid-template-columns: 1fr;
   }
@@ -240,5 +267,111 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+  }
+  
+  .version-header {
+    padding: 14px 16px;
+  }
+  
+  .version-number {
+    font-size: 15px;
+  }
+  
+  .version-date {
+    font-size: 13px;
+  }
+  
+  .version-content {
+    padding: 0 16px 16px;
+  }
+  
+  .release-notes {
+    padding: 14px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+  
+  .release-notes h4 {
+    font-size: 13px;
+  }
+  
+  .release-notes li {
+    font-size: 12px;
+  }
+  
+  .download-card {
+    padding: 14px;
+  }
+  
+  .download-info h5 {
+    font-size: 14px;
+  }
+  
+  .download-size {
+    font-size: 12px;
+  }
+  
+  .download-desc {
+    font-size: 11px;
+  }
+  
+  .btn-download {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .downloads {
+    padding: 16px 8px;
+  }
+  
+  .downloads-container {
+    padding: 12px;
+  }
+  
+  .downloads-container h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .version-group-title {
+    font-size: 14px;
+  }
+  
+  .version-header {
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .version-number {
+    font-size: 14px;
+  }
+  
+  .version-date {
+    font-size: 12px;
+  }
+  
+  .version-content {
+    padding: 0 12px 12px;
+  }
+  
+  .release-notes {
+    padding: 12px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  
+  .download-card {
+    padding: 12px;
+  }
+  
+  .download-note {
+    padding: 12px;
+    margin-top: 16px;
+  }
+  
+  .download-note p {
+    font-size: 12px;
   }
 }
