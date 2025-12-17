@@ -19,12 +19,12 @@ const Hero = () => {
               </div>
               <div className="meta-divider"></div>
               <div className="meta-item">
-                <span className="meta-value">3K+</span>
+                <span className="meta-value">3.2K+</span>
                 <span className="meta-label">Downloads</span>
               </div>
               <div className="meta-divider"></div>
               <div className="meta-item">
-                <span className="meta-badge">v1.2.0</span>
+                <span className="meta-badge">v2.0.0</span>
                 <span className="meta-label">Current Version</span>
               </div>
               <div className="meta-divider"></div>
